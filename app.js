@@ -74,7 +74,7 @@ const app = new Vue({
             },
             {
                 name: 'Luisa',
-                avatar: 'https://picsum.photos/800',
+                avatar: 'https://picsum.photos/id/500/200',
                 visible: true,
                 messages: [
                     {
@@ -86,7 +86,12 @@ const app = new Vue({
                         date: '10/01/2020 15:50:00',
                         text: 'Si, ma preferirei andare al cinema',
                         status: 'received'
-                    }
+                    },
+                    {
+                        date: '10/01/2020 15:55:55',
+                        text: 'Va bene!',
+                        status: 'sent'
+                    },
                 ],
             },
         ] 

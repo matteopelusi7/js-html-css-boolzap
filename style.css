@@ -13,6 +13,10 @@ img {
     max-width: 100%;
 }
 
+i {
+    cursor: pointer;
+}
+
 #app {
     height: 100vh;
     display: flex;
@@ -50,7 +54,7 @@ img {
 
 .icon-profile {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     color: #b1b1b1;
 }
 
@@ -104,12 +108,22 @@ img {
     overflow-y: auto;
 }
 
+.contact li:hover {
+    background-color: #e9ebeb;
+}
+
 .contact li .text-message {
     font-size: 10px;
 }
 
+.contact li:first-child {
+    margin-top: 7px;
+}
+
 .contact li {
+    margin-bottom: 7px;
     padding: 7px 15px;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
 }
@@ -207,4 +221,36 @@ img {
 .message-bar i {
     color: #687376;
     font-size: 22px;
+}
+
+@media screen and (max-width: 650px) {
+
+    .contact .date {
+        display: none;
+    }
+
+    .contact .text-message {
+        width:70px;
+    }
+
+    .profile .icon-profile i:nth-child(2) {
+        display: none;
+    }
+
+    .desktop p {
+        display: none;
+    }
+
+    .info-profile .text-message {
+        display: none;
+    }
+
+    .conversation .date-message {
+        font-size: 8px;
+    }
+
+    .message {
+        font-size: 12px;
+    }
+
 }

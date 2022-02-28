@@ -19,7 +19,7 @@
             <div class="profile">
 
                 <div class="image-profile">
-                    <img src="https://picsum.photos/200">
+                    <img src="https://picsum.photos/id/700/200">
                     <p>Matteo</p>
                 </div>
 
@@ -53,17 +53,17 @@
 
             <ul class="contact">
 
-                <li v-for="element in contacts">
+                <li v-for="(element, i) in contacts">
                     <div class="image-profile">
                         <img :src="element.avatar">
                         <div class="container-info">
                             <p>{{ element.name }}</p>
-                            <p class="text-message">{{ element.messages[1].text }}</p>
+                            <p class="text-message">{{ element.messages[2].text }}</p>
                         </div>
                     </div>
 
                     <div class="date">
-                        <p>{{ element.messages[1].date }}</p>
+                        <p>{{ element.messages[2].date }}</p>
                     </div>
                 </li>
                 
