@@ -3,3 +3,125 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+img {
+    max-width: 100%;
+}
+
+#app {
+    height: 100vh;
+    display: flex;
+}
+
+/* contact-box */
+
+.contact-box {
+    background-color: red;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    background-color: #eaeaea;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.image-profile {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+}
+
+img {
+    border-radius: 50%;
+}
+
+.icon-profile {
+    display: flex;
+    gap: 10px;
+    color: #b1b1b1;
+}
+
+.desktop {
+    background-color: #77dbff;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.desktop-notifications i {
+    background-color: white;
+    padding: 10px;
+    border-radius: 100%;
+    color: #77dbff;
+}
+
+.desktop a {
+    color: #7f9aa5;
+}
+
+.input-search {
+    background-color: #fafafa;
+    height: 40px;
+    position: relative;
+}
+
+.input-search input {
+    background-color: white;
+    width: 98%;
+    height: 97%;
+    margin-left: 5px;
+    padding: 10px 35px;
+    border: none;
+}
+
+.input-search i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+    color: #bfbfbf;
+}
+
+.contact {
+    background-color: white;
+    flex-grow: 1;
+}
+
+/* message box */
+
+.message-box {
+    border-left: 3px solid #e1e1e1;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-profile {
+    background-color: #eaeaea;
+    height: 70px;
+}
+
+.conversation {
+    background-color: #e6ddd4;
+    flex-grow: 1;
+}
+
+.message-bar {
+    background-color: #f4eeea;
+    height: 70px;
+}
