@@ -29,7 +29,7 @@ img {
 
 .profile {
     background-color: #eaeaea;
-    height: 50px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,7 +40,7 @@ img {
     width: 40px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     font-weight: 600;
 }
 
@@ -78,12 +78,13 @@ img {
     background-color: #fafafa;
     height: 40px;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .input-search input {
     background-color: white;
     width: 98%;
-    height: 97%;
     margin-left: 5px;
     padding: 10px 35px;
     border: none;
@@ -100,6 +101,27 @@ img {
 .contact {
     background-color: white;
     flex-grow: 1;
+    overflow-y: auto;
+}
+
+.contact li .text-message {
+    font-size: 10px;
+}
+
+.contact li {
+    padding: 7px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact .text-message {
+    color: #8b8c8c;
+    width: 60px;
+}
+
+.contact .date {
+    font-size: 13px;
+    color: #8b8c8c;
 }
 
 /* message box */
@@ -113,15 +135,76 @@ img {
 
 .info-profile {
     background-color: #eaeaea;
-    height: 70px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.image-profile .text-message {
+    font-size: 13px;
+    width: 200px;
+    color: #8b8c8c;
+}
+
+.icon-bar-profile {
+    color: #8b8c8c;
+    display: flex;
+    gap: 15px;
 }
 
 .conversation {
     background-color: #e6ddd4;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.message {
+    padding: 10px;
+    padding-bottom: 25px;
+    padding-right: 80px;
+    position: relative;
+    width: 40%;
+    border-radius: 5px;
+    margin: 7px 20px;
+}
+
+.message-send {
+    background-color: #c7ffba;
+    align-self: flex-end;
+}
+
+.message-received {
+    background-color: white;
+    align-self: flex-start;
+}
+
+.message-send .date-message, .message-received .date-message {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    color: #687376;
 }
 
 .message-bar {
     background-color: #f4eeea;
     height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.message-bar input {
+    width: 70%;
+    height: 55%;
+    border: none;
+    padding: 10px;
+}
+
+.message-bar i {
+    color: #687376;
+    font-size: 22px;
 }
