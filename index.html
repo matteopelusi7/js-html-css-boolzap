@@ -53,17 +53,17 @@
 
             <ul class="contact">
 
-                <li>
+                <li v-for="element in contacts">
                     <div class="image-profile">
-                        <img src="https://picsum.photos/200">
+                        <img :src="element.avatar">
                         <div class="container-info">
-                            <p>Michele</p>
-                            <p class="text-message">Tutto fatto.</p>
+                            <p>{{ element.name }}</p>
+                            <p class="text-message">{{ element.messages[1].text }}</p>
                         </div>
                     </div>
 
                     <div class="date">
-                        <p>28/02/2022 10:38</p>
+                        <p>{{ element.messages[1].date }}</p>
                     </div>
                 </li>
                 
@@ -76,7 +76,7 @@
             <div class="info-profile">
 
                 <div class="image-profile">
-                    <img src="https://picsum.photos/200">
+                    <img src="https://picsum.photos/id/237/200">
                     <div class="container-info">
                         <p>Michele</p>
                         <p class="text-message">Ultimo accesso 28/02/2022 10:38</p>
