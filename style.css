@@ -186,6 +186,7 @@ img {
     padding-right: 50px;
     position: relative;
     max-width: 60%;
+    min-width: 150px;
     border-radius: 5px;
     margin: 5px 20px;
 }

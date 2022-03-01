@@ -92,6 +92,7 @@ const app = new Vue({
         ],
 
     currentIndex: 0,
+    textMessage: '',
 
     },
 
@@ -100,6 +101,36 @@ const app = new Vue({
         goContact: function(i) {
             
             this.currentIndex = i;
+
+        },
+
+        newMessage: function(i) {
+
+            if(this.textMessage !== '') {
+                
+                const newMessageText = {
+                    date: '01/03/2022 18:00',
+                    text: this.textMessage,
+                    status: 'sent'
+                }
+                
+                this.contacts[i].messages.push(newMessageText);
+                
+            }
+            
+            this.textMessage = '';
+
+            setTimeout(() => {
+                
+                const newMessageText = {
+                    date: '01/03/2022 18:01',
+                    text: 'Ok',
+                    status: 'received'
+                }
+                
+                this.contacts[i].messages.push(newMessageText);
+
+            }, 1000);
 
         }
 
