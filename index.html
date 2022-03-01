@@ -53,17 +53,17 @@
 
             <ul class="contact">
 
-                <li v-for="(element, i) in contacts">
+                <li v-for="(element, i) in contacts" :class="( i === 0 ) ? 'active' : '' ">
                     <div class="image-profile">
                         <img :src="element.avatar">
                         <div class="container-info">
                             <p>{{ element.name }}</p>
-                            <p class="text-message">{{ element.messages[2].text }}</p>
+                            <p class="text-message">{{ element.messages[element.messages.length - 1].text }}</p>
                         </div>
                     </div>
 
                     <div class="date">
-                        <p>{{ element.messages[2].date }}</p>
+                        <p>{{ element.messages[element.messages.length - 1].date }}</p>
                     </div>
                 </li>
                 
@@ -76,9 +76,9 @@
             <div class="info-profile">
 
                 <div class="image-profile">
-                    <img src="https://picsum.photos/id/237/200">
+                    <img :src="contacts[0].avatar">
                     <div class="container-info">
-                        <p>Michele</p>
+                        <p>{{ contacts[0].name }}</p>
                         <p class="text-message">Ultimo accesso 28/02/2022 10:38</p>
                     </div>
                 </div>
