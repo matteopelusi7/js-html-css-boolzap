@@ -89,11 +89,19 @@ const app = new Vue({
                     }
                 ],
             },
-        ] 
+        ],
+
+    currentIndex: 0,
 
     },
 
     methods: {
+
+        goContact: function(i) {
+            
+            this.currentIndex = i;
+
+        }
 
     }
 

@@ -53,7 +53,9 @@
 
             <ul class="contact">
 
-                <li v-for="(element, i) in contacts" :class="( i === 0 ) ? 'active' : '' ">
+                <li v-for="(element, i) in contacts" 
+                    @click="goContact(i)" 
+                    :class="( i === currentIndex ) ? 'active' : '' ">
                     <div class="image-profile">
                         <img :src="element.avatar">
                         <div class="container-info">
@@ -76,9 +78,9 @@
             <div class="info-profile">
 
                 <div class="image-profile">
-                    <img :src="contacts[0].avatar">
+                    <img :src="contacts[currentIndex].avatar">
                     <div class="container-info">
-                        <p>{{ contacts[0].name }}</p>
+                        <p>{{ contacts[currentIndex].name }}</p>
                         <p class="text-message">Ultimo accesso 28/02/2022 10:38</p>
                     </div>
                 </div>
@@ -93,19 +95,17 @@
 
             <div class="conversation">
 
-                <div class="message message-send">
-                    <p>Hai portato a spasso il cane?</p>
-                    <p class="date-message">28/02/2022 10:38</p>
+                <div v-for="(element, i) in contacts[currentIndex].messages" 
+                    v-if="element.status == 'sent' " 
+                    class="message message-send">
+                    <p>{{ element.text }}</p>
+                    <p class="date-message">{{ element.date }}</p>
                 </div>
 
-                <div class="message message-send">
-                    <p>Ricordati di dargli a mangiare</p>
-                    <p class="date-message">28/02/2022 10:38</p>
-                </div>
-
-                <div class="message message-received">
-                    <p>Tutto Fatto.</p>
-                    <p class="date-message">28/02/2022 10:38</p>
+                <div v-else="element.status == 'received' " 
+                    class="message message-received">
+                    <p>{{ element.text }}</p>
+                    <p class="date-message">{{ element.date }}</p>
                 </div>
 
             </div>
