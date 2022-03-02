@@ -100,24 +100,10 @@
             <div class="conversation">
 
                 <div v-for="(element, i) in contacts[currentIndex].messages" 
-                    v-if="element.status == 'sent' " 
-                    class="message message-send">
+                    class="message"
+                    :class="(element.status == 'sent') ? 'message-send' : 'message-received' ">
                     <p>{{ element.text }}</p>
                     <p class="date-message">{{ element.date }}</p>
-                    <div class="dropdown">
-                        <span>Info Message</span>
-                        <span>Delete Message</span>
-                    </div>
-                </div>
-
-                <div v-else="element.status == 'received' " 
-                    class="message message-received">
-                    <p>{{ element.text }}</p>
-                    <p class="date-message">{{ element.date }}</p>
-                    <div class="dropdown">
-                        <span>Info Message</span>
-                        <span>Delete Message</span>
-                    </div>
                 </div>
 
             </div>

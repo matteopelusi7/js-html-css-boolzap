@@ -230,22 +230,6 @@ img {
     font-size: 22px;
 }
 
-.dropdown {
-    background-color: white;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;    
-    position: absolute;
-    border-radius: 8px;
-    top: 70%;
-    left: 20%;
-    width: 60%;
-    z-index: 1;
-    display: none;
-}
-
 @media screen and (max-width: 650px) {
 
     .contact .date {

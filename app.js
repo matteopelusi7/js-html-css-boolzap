@@ -107,17 +107,11 @@ const app = new Vue({
 
         newMessage: function(i) {
 
-            const date = new Date();
-
             if(this.textMessage !== '') {
+
+                const defMessage = this.createMessage(this.textMessage, 'sent')
                 
-                const newMessageText = {
-                    date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
-                    text: this.textMessage,
-                    status: 'sent'
-                }
-                
-                this.contacts[i].messages.push(newMessageText);
+                this.contacts[i].messages.push(defMessage);
                 
             }
             
@@ -125,17 +119,25 @@ const app = new Vue({
 
             setTimeout(() => {
 
-                const date = new Date();
+                const defMessage = this.createMessage('Ok', 'received')
 
-                const newMessageText = {
-                    date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
-                    text: 'Ok',
-                    status: 'received'
-                }
-                
-                this.contacts[i].messages.push(newMessageText);
+                this.contacts[i].messages.push(defMessage);
 
             }, 1000);
+
+        },
+
+        createMessage: function(text, status) {
+
+            const date = new Date();
+
+            const newMessageText = {
+                date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
+                text,
+                status,
+            }
+
+            return newMessageText;
 
         },
 
