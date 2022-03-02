@@ -104,6 +104,13 @@
                     :class="(element.status == 'sent') ? 'message-send' : 'message-received' ">
                     <p>{{ element.text }}</p>
                     <p class="date-message">{{ element.date }}</p>
+                    <i v-if="element.status == 'sent' " 
+                    @click="toggle(i)" 
+                    class="fa-solid fa-chevron-down"></i>
+                    <div v-if="element.toggleButton == true" class="dropdown">
+                        <span>Info Message</span>
+                        <span @click="deleteMessage(i)">Delete Message</span>
+                    </div>
                 </div>
 
             </div>
