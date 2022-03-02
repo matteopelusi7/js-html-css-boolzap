@@ -93,6 +93,7 @@ const app = new Vue({
 
     currentIndex: 0,
     textMessage: '',
+    searchContacts: '',
 
     },
 
@@ -106,10 +107,12 @@ const app = new Vue({
 
         newMessage: function(i) {
 
+            const date = new Date();
+
             if(this.textMessage !== '') {
                 
                 const newMessageText = {
-                    date: '01/03/2022 18:00',
+                    date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
                     text: this.textMessage,
                     status: 'sent'
                 }
@@ -121,9 +124,11 @@ const app = new Vue({
             this.textMessage = '';
 
             setTimeout(() => {
-                
+
+                const date = new Date();
+
                 const newMessageText = {
-                    date: '01/03/2022 18:01',
+                    date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
                     text: 'Ok',
                     status: 'received'
                 }
@@ -132,8 +137,28 @@ const app = new Vue({
 
             }, 1000);
 
+        },
+
+        searchContact: function () {
+
+            for ( let i = 0; i < this.contacts.length; i++)  {
+
+                let nameArray = this.contacts[i].name.toLowerCase();
+                let nameSearch = this.searchContacts.toLowerCase();
+
+                if ( nameArray.includes(nameSearch) ) {
+
+                    this.contacts[i].visible = true;
+
+                } else {
+
+                    this.contacts[i].visible = false;
+
+                }
+
+            }
         }
 
     }
-
+    
 });

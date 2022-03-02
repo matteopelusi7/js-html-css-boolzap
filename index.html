@@ -47,7 +47,10 @@
             <div class="input-search">
 
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                <input type="text"
+                 placeholder="Cerca o inizia una nuova chat" 
+                 v-model="searchContacts"
+                 @keyup="searchContact">
 
             </div>
 
@@ -55,7 +58,8 @@
 
                 <li v-for="(element, i) in contacts" 
                     @click="goContact(i)" 
-                    :class="( i === currentIndex ) ? 'active' : '' ">
+                    :class="( i === currentIndex ) ? 'active' : '' "
+                    v-if="element.visible">
                     <div class="image-profile">
                         <img :src="element.avatar">
                         <div class="container-info">
@@ -100,12 +104,20 @@
                     class="message message-send">
                     <p>{{ element.text }}</p>
                     <p class="date-message">{{ element.date }}</p>
+                    <div class="dropdown">
+                        <span>Info Message</span>
+                        <span>Delete Message</span>
+                    </div>
                 </div>
 
                 <div v-else="element.status == 'received' " 
                     class="message message-received">
                     <p>{{ element.text }}</p>
                     <p class="date-message">{{ element.date }}</p>
+                    <div class="dropdown">
+                        <span>Info Message</span>
+                        <span>Delete Message</span>
+                    </div>
                 </div>
 
             </div>
